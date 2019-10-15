@@ -1,8 +1,8 @@
-<app-header></app-header>
+<app-header (newEstateOfferFormViewToggle)="newEstateOfferFormView.isActive = !newEstateOfferFormView.isActive"></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-new-estate-offer></app-new-estate-offer>
+      <app-new-estate-offer *ngIf="newEstateOfferFormView.isActive"></app-new-estate-offer>
     </div>
   </div>
 </div>
