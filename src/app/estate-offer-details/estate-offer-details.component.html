@@ -1,0 +1,30 @@
+<p>Estate offer details</p>
+<form #f="ngForm" ngNativeValidate>
+  <div class="row">
+    <div class="col-xs-12">
+      <label>Miasto:</label>
+      <input type="text" placeholder="Miasto" class="form-control" required ngModel name="city">
+      <label>Ulica:</label>
+      <input type="text" placeholder="Ulica" class="form-control" required ngModel name="street">
+    </div>
+    <div class="col-sm-6 form-group">
+      <label>Numer budynku:</label>
+      <input type="number" placeholder="Nr budynku" step="1" min="1" class="form-control" required ngModel name="property">
+      <label>Numer mieszkania:</label>
+      <input type="number" placeholder="nr mieszkania" step="1" min="1" class="form-control" required ngModel name="apartment">
+    </div>
+    <div class="col-sm-6 form-group">
+      <label>Cena (zł):</label>
+      <input type="number" placeholder="Cena" step="0.01" min="0" class="form-control" required ngModel name="price">
+      <label>Typ:</label>
+      <input type="number" placeholder="Typ" step="1" min="1" class="form-control" required ngModel name="type">
+    </div>
+    <div class="col-xs-12 form-group">
+      <label>Opis:</label>
+      <input type="text" placeholder="Opis" class="form-control" required ngModel name="description">
+    </div>
+    <div class="col-xs-3 form-group">
+      <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Dodaj ofertę</button>
+    </div>
+  </div>
+</form>

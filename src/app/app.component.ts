@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   static serverAddress = 'https://alfa.propertygrouppoland.pl/q/paweldrelich';
-  newEstateOfferFormView = {isActive: false};
+  toggleViewNewEstateOfferForm = {isActive: false};
+  toggleViewMyEstateOffers = {isActive: false};
 }

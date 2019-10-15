@@ -1,8 +1,21 @@
-<app-header (newEstateOfferFormViewToggle)="newEstateOfferFormView.isActive = !newEstateOfferFormView.isActive"></app-header>
+<app-header
+  (newEstateOfferFormViewToggle)="toggleViewNewEstateOfferForm.isActive = !toggleViewNewEstateOfferForm.isActive"
+  (myEstateOffersViewToggle)="toggleViewMyEstateOffers.isActive = !toggleViewMyEstateOffers.isActive"
+></app-header>
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <app-new-estate-offer *ngIf="newEstateOfferFormView.isActive"></app-new-estate-offer>
+    <div class="col-xs-6">
+      <app-my-estate-offers-list></app-my-estate-offers-list>
+    </div>
+    <div class="col-xs-6">
+      <div class="row">
+        <div class="col-xs-12">
+          <app-estate-offer-details></app-estate-offer-details>
+        </div>
+        <div class="col-xs-12">
+          <app-new-estate-offer></app-new-estate-offer>
+        </div>
+      </div>
     </div>
   </div>
 </div>
