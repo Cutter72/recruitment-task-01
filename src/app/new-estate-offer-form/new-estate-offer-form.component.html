@@ -1,28 +1,30 @@
+<form (ngSubmit)="onSubmit()" #f="ngForm" ngNativeValidate>
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-12 form-group">
     <label>Miasto:</label>
-    <input type="text" class="form-control" required="true">
+    <input type="text" placeholder="Miasto" class="form-control" required ngModel name="city">
     <label>Ulica:</label>
-    <input type="text" class="form-control" required="true">
+    <input type="text" placeholder="Ulica" class="form-control" required ngModel name="street">
   </div>
-  <div class="col-md-6">
+  <div class="col-md-6 form-group">
     <label>Numer budynku:</label>
-    <input type="number" step="1" min="1" class="form-control" required="true">
+    <input type="number" placeholder="Nr budynku" step="1" min="1" class="form-control" required ngModel name="property">
     <label>Numer mieszkania:</label>
-    <input type="number" step="1" min="1" class="form-control" required="true">
+    <input type="number" placeholder="nr mieszkania" step="1" min="1" class="form-control" required ngModel name="apartment">
   </div>
-  <div class="col-md-6">
-    <label>Cena:</label>
-    <input type="number" step="10000" min="0" class="form-control" required="true">
+  <div class="col-md-6 form-group">
+    <label>Cena (zł):</label>
+    <input type="number" placeholder="Cena" step="1" min="0" class="form-control" required ngModel name="price">
     <label>Typ:</label>
-    <input type="number" step="1" min="1" class="form-control" required="true">
+    <input type="number" placeholder="Typ" step="1" min="1" class="form-control" required ngModel name="type">
   </div>
-  <div class="col-md-12">
+  <div class="col-md-12 form-group">
     <label>Opis:</label>
-    <input type="text" class="form-control" required="true">
+    <input type="text" placeholder="Opis" class="form-control" required ngModel name="description">
   </div>
-  <div class="col-md-3">
-    <button type="submit" class="btn btn-primary">Dodaj</button>
+  <div class="col-md-3 form-group">
+    <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Dodaj</button>
   </div>
 </div>
+</form>
 
