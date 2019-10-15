@@ -8,6 +8,7 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { MyEstateOffersListComponent } from './my-estate-offers-list/my-estate-offers-list.component';
 import { EstateOfferDetailsComponent } from './estate-offer-details/estate-offer-details.component';
+import { MyEstateOfferListItemComponent } from './my-estate-offers-list/my-estate-offer-list-item/my-estate-offer-list-item.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { EstateOfferDetailsComponent } from './estate-offer-details/estate-offer
     HeaderComponent,
     NewEstateOfferFormComponent,
     MyEstateOffersListComponent,
-    EstateOfferDetailsComponent
+    EstateOfferDetailsComponent,
+    MyEstateOfferListItemComponent
   ],
   imports: [
     BrowserModule,
