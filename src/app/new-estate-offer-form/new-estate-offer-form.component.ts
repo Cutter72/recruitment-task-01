@@ -1,5 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
+import {HttpClient} from '@angular/common/http';
+import {AppComponent} from '../app.component';
 
 @Component({
   selector: 'app-new-estate-offer',
@@ -10,7 +12,7 @@ export class NewEstateOfferFormComponent implements OnInit {
   newEstateOffer: NewEstateOffer;
   @ViewChild('f', {static: true}) signedForm: NgForm;
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.newEstateOffer = new NewEstateOffer();
   }
 
@@ -27,7 +29,15 @@ export class NewEstateOfferFormComponent implements OnInit {
       this.newEstateOffer.type = this.signedForm.value.type;
       this.newEstateOffer.description = this.signedForm.value.description;
       console.log(this.newEstateOffer);
+      this.postNewEstateOffer();
     }
+  }
+
+  postNewEstateOffer() {
+    this.http.post(AppComponent.serverAddress + '/create', this.newEstateOffer)
+      .subscribe(responseData => {
+        console.log(responseData);
+      });
   }
 }
 
