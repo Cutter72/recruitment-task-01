@@ -3,13 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { NewEstateOfferComponent } from './new-estate-offer/new-estate-offer.component';
+import { NewEstateOfferFormComponent } from './new-estate-offer-form/new-estate-offer-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    NewEstateOfferComponent
+    NewEstateOfferFormComponent
   ],
   imports: [
     BrowserModule
