@@ -22,12 +22,12 @@
           </div>
           <div class="col-sm-6 form-group">
             <label>Numer budynku:</label>
-            <input type="number" placeholder="Nr budynku" [value]="details.estateOffer.property"
+            <input type="text" placeholder="Nr budynku" [value]="details.estateOffer.property"
                    disabled="{{!details.unlocked}}" step="1"
                    min="1" class="form-control" required ngModel
                    name="property">
             <label>Numer mieszkania:</label>
-            <input type="number" placeholder="Nr mieszkania" value="{{details.estateOffer.apartment}}"
+            <input type="text" placeholder="Nr mieszkania" value="{{details.estateOffer.apartment}}"
                    disabled="{{!details.unlocked}}" step="1"
                    min="1" class="form-control" required ngModel
                    name="apartment">
@@ -54,7 +54,7 @@
               <button type="button" class="btn btn-primary" (click)="unlockToggle()">Edytuj ofertę</button>
             </div>
           </ng-template>
-          <div class="col-sm-3" *ngIf="details.unlocked else edit">
+          <div class="col-sm-4" *ngIf="details.unlocked else edit">
             <button type="button" class="btn btn-warning" (click)="unlockToggle()">Anuluj</button>
           </div>
           <div class="col-sm-4" *ngIf="details.unlocked">

@@ -29,7 +29,6 @@ export class NewEstateOfferFormComponent implements OnInit {
       this.newEstateOffer.type = this.signedForm.value.type;
       this.newEstateOffer.description = this.signedForm.value.description;
       this.postNewEstateOffer();
-      this.signedForm.reset();
     }
   }
 
@@ -38,6 +37,7 @@ export class NewEstateOfferFormComponent implements OnInit {
       .subscribe(responseData => {
         console.log(responseData);
       });
+    this.signedForm.reset();
   }
 }
 

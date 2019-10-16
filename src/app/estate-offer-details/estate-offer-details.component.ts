@@ -79,9 +79,14 @@ export class EstateOfferDetailsComponent implements OnInit, OnChanges {
   }
 
   postDelete() {
-    this.http.post(AppComponent.serverAddress + '/delete/' + this.details.estateOffer.id, {})
-      .subscribe(responseData => {
-        console.log(responseData);
-      });
+    if (confirm('Na pewno chcesz usunąć tę ofertę?')) {
+      this.http.post(AppComponent.serverAddress + '/delete/' + this.details.estateOffer.id, {})
+        .subscribe(responseData => {
+          console.log(responseData);
+        });
+      this.signedForm.reset();
+      this.details.unlocked = false;
+      this.details.loaded = false;
+    }
   }
 }
