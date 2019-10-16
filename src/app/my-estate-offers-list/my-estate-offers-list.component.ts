@@ -16,6 +16,7 @@ export class MyEstateOffersListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getAllEstateOffers();
   }
 
   getAllEstateOffers() {
