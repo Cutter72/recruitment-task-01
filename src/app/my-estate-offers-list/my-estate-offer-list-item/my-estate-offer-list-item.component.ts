@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-my-estate-offer-list-item',
@@ -11,7 +11,6 @@ export class MyEstateOfferListItemComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
 
 export class EstateOffer {

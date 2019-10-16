@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {AppComponent} from '../app.component';
 import {EstateOffer} from './my-estate-offer-list-item/my-estate-offer-list-item.component';
@@ -10,6 +10,7 @@ import {EstateOffer} from './my-estate-offer-list-item/my-estate-offer-list-item
 })
 export class MyEstateOffersListComponent implements OnInit {
   @Input() estateOffers: Array<EstateOffer>;
+  @Output() itemClick = new EventEmitter<EstateOffer>();
   constructor(private http: HttpClient) {
     this.estateOffers = new Array<EstateOffer>();
   }
@@ -24,11 +25,18 @@ export class MyEstateOffersListComponent implements OnInit {
         console.log(responseData);
         console.log(this.estateOffers);
       } else {
-        alert('COś poszło nie tak!');
+        alert('Coś poszło nie tak!');
       }
     });
   }
 
+  passOfferId(id: number) {
+    for (let i = 0; i < this.estateOffers.length; i++) {
+      if (this.estateOffers[i].id === id) {
+        this.itemClick.emit(this.estateOffers[i]);
+      }
+    }
+  }
 }
 
 class ResponseData {
