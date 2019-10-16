@@ -1,16 +1,19 @@
 <div class="panel-group">
   <div class="panel panel-primary">
-    <div class="panel-heading in cursor-pointer" data-toggle="collapse" data-target="#estateOfferList"
-         aria-expanded="true"
-         aria-controls="estateOfferList">
+    <div class="panel-heading">
       <div class="row">
-        <div class="col-xs-6"><i class="glyphicon glyphicon-triangle-right"></i>Lista moich ofert</div>
+        <div class="col-xs-9"><i class="glyphicon glyphicon-triangle-right"></i>Lista moich ofert</div>
+        <div class="col-md-3" align="right">
+          <button type="button" class="btn btn-primary" style="background-color: #3687c7" (click)="getAllEstateOffers()">Odśwież</button>
+        </div>
       </div>
     </div>
-    <div class="panel-body collapse in" id="estateOfferList">
+    <div class="panel-body">
       <app-my-estate-offer-list-item></app-my-estate-offer-list-item>
       <app-my-estate-offer-list-item></app-my-estate-offer-list-item>
       <app-my-estate-offer-list-item></app-my-estate-offer-list-item>
+
     </div>
+
   </div>
 </div>
