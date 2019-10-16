@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="panel-body">
-      <app-my-estate-offer-list-item *ngFor="let offer of estateOffers"></app-my-estate-offer-list-item>
+      <app-my-estate-offer-list-item *ngFor="let offer of estateOffers" [estateOffer]="offer"></app-my-estate-offer-list-item>
     </div>
   </div>
 </div>

@@ -1,19 +1,19 @@
 <div class="panel-group ">
 
   <div class="panel panel-default">
-    <a class="list-group-item list-group-item-action" style="border: none; padding: 5px" id="list-profile-list" data-toggle="tab"
+    <a class="list-group-item list-group-item-action" style="border: none; padding: 3px" id="list-profile-list" data-toggle="tab"
        href="#list-profile" role="tab" aria-controls="list-profile" aria-selected="false">
     <div class="panel-heading" style="background-color: #ddd">
       <div class="row">
         <div class="col-sm-9">
-          Miasto Ulica nr budynku nr mieszkania typ
+          {{estateOffer.city}} {{estateOffer.street}} {{estateOffer.property}}/{{estateOffer.apartment}} - {{estateOffer.type}}
         </div>
-        <div class="col-md-3" align="right"><span class="badge" align="right">999999 zł</span></div>
+        <div class="col-md-3" align="right"><span class="badge" align="right">{{estateOffer.price}} zł</span></div>
       </div>
     </div>
 
     <div class="panel-body">
-      <p>OPIS</p>
+      {{estateOffer.description}}
     </div>
     </a>
   </div>

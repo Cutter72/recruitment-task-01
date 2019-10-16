@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {AppComponent} from '../app.component';
-import {showWarningOnce} from 'tslint/lib/error';
-import {$} from 'protractor';
+import {EstateOffer} from './my-estate-offer-list-item/my-estate-offer-list-item.component';
 
 @Component({
   selector: 'app-my-estate-offers-list',
@@ -10,7 +9,7 @@ import {$} from 'protractor';
   styleUrls: ['./my-estate-offers-list.component.css']
 })
 export class MyEstateOffersListComponent implements OnInit {
-  estateOffers: Array<EstateOffer>;
+  @Input() estateOffers: Array<EstateOffer>;
   constructor(private http: HttpClient) {
     this.estateOffers = new Array<EstateOffer>();
   }
@@ -31,19 +30,7 @@ export class MyEstateOffersListComponent implements OnInit {
   }
 
 }
-class EstateOffer {
-  id: number;
-  city: string;
-  street: string;
-  property: string;
-  apartment: string;
-  price: number;
-  type: number;
-  description: string;
 
-  constructor() {
-  }
-}
 class ResponseData {
   status: string;
   data: Array<EstateOffer>;
