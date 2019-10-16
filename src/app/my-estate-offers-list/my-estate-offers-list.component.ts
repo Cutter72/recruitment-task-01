@@ -11,6 +11,9 @@ import {EstateOffer} from './my-estate-offer-list-item/my-estate-offer-list-item
 export class MyEstateOffersListComponent implements OnInit {
   @Input() estateOffers: Array<EstateOffer>;
   @Output() itemClick = new EventEmitter<EstateOffer>();
+  sortByCityAsc = true;
+  sortByPriceAsc = true;
+  sortByStreetAsc = true;
   constructor(private http: HttpClient) {
     this.estateOffers = new Array<EstateOffer>();
   }
@@ -35,6 +38,33 @@ export class MyEstateOffersListComponent implements OnInit {
         this.itemClick.emit(this.estateOffers[i]);
       }
     }
+  }
+
+  sortByCity() {
+    if (this.sortByCityAsc) {
+      this.estateOffers.sort((a, b) => (a.city > b.city) ? 1 : ((b.city > a.city) ? -1 : 0));
+    } else {
+      this.estateOffers.sort((a, b) => (a.city > b.city) ? -1 : ((b.city > a.city) ? 1 : 0));
+    }
+    this.sortByCityAsc = !this.sortByCityAsc;
+  }
+
+  sortByPrice() {
+    if (this.sortByPriceAsc) {
+      this.estateOffers.sort((a, b) => (a.price > b.price) ? 1 : ((b.price > a.price) ? -1 : 0));
+    } else {
+      this.estateOffers.sort((a, b) => (a.price > b.price) ? -1 : ((b.price > a.price) ? 1 : 0));
+    }
+    this.sortByPriceAsc = !this.sortByPriceAsc;
+  }
+
+  sortByStreet() {
+    if (this.sortByStreetAsc) {
+      this.estateOffers.sort((a, b) => (a.street > b.street) ? 1 : ((b.street > a.street) ? -1 : 0));
+    } else {
+      this.estateOffers.sort((a, b) => (a.street > b.street) ? -1 : ((b.street > a.street) ? 1 : 0));
+    }
+    this.sortByStreetAsc = !this.sortByStreetAsc;
   }
 }
 
