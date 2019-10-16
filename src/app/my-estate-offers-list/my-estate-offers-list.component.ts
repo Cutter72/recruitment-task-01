@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {AppComponent} from '../app.component';
+import {showWarningOnce} from 'tslint/lib/error';
+import {$} from 'protractor';
 
 @Component({
   selector: 'app-my-estate-offers-list',
@@ -18,9 +20,13 @@ export class MyEstateOffersListComponent implements OnInit {
 
   getAllEstateOffers() {
     this.http.get(AppComponent.serverAddress + '/getAll').subscribe(responseData => {
-      this.estateOffers = responseData.data;
-      console.log(responseData);
-      console.log(this.estateOffers);
+      if ((responseData as ResponseData).status === 'success') {
+        this.estateOffers = (responseData as ResponseData).data;
+        console.log(responseData);
+        console.log(this.estateOffers);
+      } else {
+        alert('COś poszło nie tak!');
+      }
     });
   }
 
@@ -37,4 +43,8 @@ class EstateOffer {
 
   constructor() {
   }
+}
+class ResponseData {
+  status: string;
+  data: Array<EstateOffer>;
 }
