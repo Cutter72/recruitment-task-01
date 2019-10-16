@@ -26,8 +26,8 @@ export class EstateOfferDetailsComponent implements OnInit, OnChanges {
     this.details.estateOffer.street = '';
     this.details.estateOffer.property = '';
     this.details.estateOffer.apartment = '';
-    this.details.estateOffer.price = 0;
-    this.details.estateOffer.type = 0;
+    this.details.estateOffer.price = null;
+    this.details.estateOffer.type = null;
     this.details.estateOffer.description = '';
   }
 

@@ -8,8 +8,6 @@ import {EstateOffer} from './my-estate-offers-list/my-estate-offer-list-item/my-
 })
 export class AppComponent {
   static readonly serverAddress = 'https://alfa.propertygrouppoland.pl/q/paweldrelich';
-  toggleViewNewEstateOfferForm = {isActive: false};
-  toggleViewMyEstateOffers = {isActive: false};
   offerToShow: OfferToShow;
 
   showDetails(estateOfferToShow: EstateOffer) {

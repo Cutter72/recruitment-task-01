@@ -1,6 +1,7 @@
 <div class="panel-group">
   <div class="panel panel-success">
-    <div class="panel-heading in cursor-pointer" data-toggle="collapse" data-target="#addEstateOfferBody" aria-expanded="true"
+    <div class="panel-heading in cursor-pointer" data-toggle="collapse" data-target="#addEstateOfferBody"
+         aria-expanded="true"
          aria-controls="addEstateOfferBody">
       <div class="row">
         <div class="col-xs-6"><i class="glyphicon glyphicon-triangle-right"></i>Dodaj nową ofertę</div>
@@ -9,7 +10,7 @@
     <div class="panel-body collapse in" id="addEstateOfferBody">
 
       <form (ngSubmit)="onSubmit()" #f="ngForm" ngNativeValidate>
-        <div class="row panel-heading">
+        <div class="row">
           <div class="col-xs-12">
             <label>Miasto:</label>
             <input type="text" placeholder="Miasto" class="form-control" required ngModel name="city">

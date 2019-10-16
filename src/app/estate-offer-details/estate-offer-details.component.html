@@ -12,34 +12,41 @@
         <div class="row">
           <div class="col-xs-12">
             <label>Miasto:</label>
-            <input type="text" placeholder="Miasto" value="{{details.estateOffer.city}}" disabled="{{!details.unlocked}}" class="form-control"
+            <input type="text" placeholder="Miasto" value="{{details.estateOffer.city}}"
+                   disabled="{{!details.unlocked}}" class="form-control"
                    required ngModel name="city">
             <label>Ulica:</label>
-            <input type="text" placeholder="Ulica" value="{{details.estateOffer.street}}" disabled="{{!details.unlocked}}" class="form-control"
+            <input type="text" placeholder="Ulica" value="{{details.estateOffer.street}}"
+                   disabled="{{!details.unlocked}}" class="form-control"
                    required ngModel name="street">
           </div>
           <div class="col-sm-6 form-group">
             <label>Numer budynku:</label>
-            <input type="number" placeholder="Nr budynku" [value]="details.estateOffer.property" disabled="{{!details.unlocked}}" step="1"
+            <input type="number" placeholder="Nr budynku" [value]="details.estateOffer.property"
+                   disabled="{{!details.unlocked}}" step="1"
                    min="1" class="form-control" required ngModel
                    name="property">
             <label>Numer mieszkania:</label>
-            <input type="number" placeholder="Nr mieszkania" value="{{details.estateOffer.apartment}}" disabled="{{!details.unlocked}}" step="1"
+            <input type="number" placeholder="Nr mieszkania" value="{{details.estateOffer.apartment}}"
+                   disabled="{{!details.unlocked}}" step="1"
                    min="1" class="form-control" required ngModel
                    name="apartment">
           </div>
           <div class="col-sm-6 form-group">
             <label>Cena (zł):</label>
-            <input type="number" placeholder="Cena" value="{{details.estateOffer.price}}" disabled="{{!details.unlocked}}" step="0.01" min="0"
+            <input type="number" placeholder="Cena" value="{{details.estateOffer.price}}"
+                   disabled="{{!details.unlocked}}" step="0.01" min="0"
                    class="form-control" required ngModel
                    name="price">
             <label>Typ:</label>
-            <input type="number" placeholder="Typ" value="{{details.estateOffer.type}}" disabled="{{!details.unlocked}}" step="1" min="1"
+            <input type="number" placeholder="Typ" value="{{details.estateOffer.type}}" disabled="{{!details.unlocked}}"
+                   step="1" min="1"
                    class="form-control" required ngModel name="type">
           </div>
           <div class="col-xs-12 form-group">
             <label>Opis:</label>
-            <input type="text" placeholder="Opis" value="{{details.estateOffer.description}}" disabled="{{!details.unlocked}}"
+            <input type="text" placeholder="Opis" value="{{details.estateOffer.description}}"
+                   disabled="{{!details.unlocked}}"
                    class="form-control" required ngModel name="description">
           </div>
           <ng-template #edit>
@@ -47,7 +54,7 @@
               <button type="button" class="btn btn-primary" (click)="unlockToggle()">Edytuj ofertę</button>
             </div>
           </ng-template>
-          <div class="col-sm-4" *ngIf="details.unlocked else edit">
+          <div class="col-sm-3" *ngIf="details.unlocked else edit">
             <button type="button" class="btn btn-warning" (click)="unlockToggle()">Anuluj</button>
           </div>
           <div class="col-sm-4" *ngIf="details.unlocked">
