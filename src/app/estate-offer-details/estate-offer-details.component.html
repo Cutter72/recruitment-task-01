@@ -12,31 +12,49 @@
         <div class="row">
           <div class="col-xs-12">
             <label>Miasto:</label>
-            <input type="text" placeholder="Miasto" value="{{offer.city}}" disabled class="form-control" required ngModel name="city">
+            <input type="text" placeholder="Miasto" value="{{details.estateOffer.city}}" disabled class="form-control"
+                   required ngModel name="city">
             <label>Ulica:</label>
-            <input type="text" placeholder="Ulica" value="{{offer.street}}" disabled class="form-control" required ngModel name="street">
+            <input type="text" placeholder="Ulica" value="{{details.estateOffer.street}}" disabled class="form-control"
+                   required ngModel name="street">
           </div>
           <div class="col-sm-6 form-group">
             <label>Numer budynku:</label>
-            <input type="number" placeholder="Nr budynku" value="{{offer.property}}" disabled step="1" min="1" class="form-control" required ngModel
+            <input type="number" placeholder="Nr budynku" value="{{details.estateOffer.property}}" disabled step="1"
+                   min="1" class="form-control" required ngModel
                    name="property">
             <label>Numer mieszkania:</label>
-            <input type="number" placeholder="Nr mieszkania" value="{{offer.apartment}}" disabled step="1" min="1" class="form-control" required ngModel
+            <input type="number" placeholder="Nr mieszkania" value="{{details.estateOffer.apartment}}" disabled step="1"
+                   min="1" class="form-control" required ngModel
                    name="apartment">
           </div>
           <div class="col-sm-6 form-group">
             <label>Cena (zł):</label>
-            <input type="number" placeholder="Cena" value="{{offer.price}}" disabled step="0.01" min="0" class="form-control" required ngModel
+            <input type="number" placeholder="Cena" value="{{details.estateOffer.price}}" disabled step="0.01" min="0"
+                   class="form-control" required ngModel
                    name="price">
             <label>Typ:</label>
-            <input type="number" placeholder="Typ" value="{{offer.type}}" disabled step="1" min="1" class="form-control" required ngModel name="type">
+            <input type="number" placeholder="Typ" value="{{details.estateOffer.type}}" disabled step="1" min="1"
+                   class="form-control" required ngModel name="type">
           </div>
           <div class="col-xs-12 form-group">
             <label>Opis:</label>
-            <input type="text" placeholder="Opis" value="{{offer.description}}" disabled class="form-control" required ngModel name="description">
+            <input type="text" placeholder="Opis" value="{{details.estateOffer.description}}" disabled
+                   class="form-control" required ngModel name="description">
           </div>
-          <div class="col-xs-3 form-group">
-            <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Edytuj ofertę</button>
+          <ng-template #edit>
+            <div class="col-sm-4" *ngIf="details.loaded">
+              <button type="button" class="btn btn-primary">Edytuj ofertę</button>
+            </div>
+          </ng-template>
+          <div class="col-sm-4" *ngIf="details.unlocked else edit">
+            <button type="submit" class="btn btn-warning">Anuluj</button>
+          </div>
+          <div class="col-sm-4" *ngIf="details.unlocked">
+            <button type="submit" class="btn btn-success">Zapisz zmiany</button>
+          </div>
+          <div class="col-sm-4" *ngIf="details.unlocked" align="right">
+            <button type="submit" class="btn btn-danger">Usuń ofertę</button>
           </div>
         </div>
       </form>

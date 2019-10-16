@@ -10,9 +10,20 @@ export class AppComponent {
   static readonly serverAddress = 'https://alfa.propertygrouppoland.pl/q/paweldrelich';
   toggleViewNewEstateOfferForm = {isActive: false};
   toggleViewMyEstateOffers = {isActive: false};
-  offerToShow: EstateOffer;
+  offerToShow: OfferToShow;
 
   showDetails(estateOfferToShow: EstateOffer) {
-    this.offerToShow = estateOfferToShow;
+    this.offerToShow = new OfferToShow(estateOfferToShow, true);
+  }
+}
+
+export class OfferToShow {
+  estateOffer: EstateOffer;
+  loaded: boolean;
+  unlocked: boolean;
+
+  constructor(estateOffer: EstateOffer, loaded: boolean) {
+    this.estateOffer = estateOffer;
+    this.loaded = loaded;
   }
 }
