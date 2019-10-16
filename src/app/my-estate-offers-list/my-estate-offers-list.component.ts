@@ -22,8 +22,6 @@ export class MyEstateOffersListComponent implements OnInit {
     this.http.get(AppComponent.serverAddress + '/getAll').subscribe(responseData => {
       if ((responseData as ResponseData).status === 'success') {
         this.estateOffers = (responseData as ResponseData).data;
-        console.log(responseData);
-        console.log(this.estateOffers);
       } else {
         alert('Coś poszło nie tak!');
       }

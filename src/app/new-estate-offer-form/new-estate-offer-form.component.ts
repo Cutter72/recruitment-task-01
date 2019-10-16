@@ -28,8 +28,8 @@ export class NewEstateOfferFormComponent implements OnInit {
       this.newEstateOffer.price = this.signedForm.value.price;
       this.newEstateOffer.type = this.signedForm.value.type;
       this.newEstateOffer.description = this.signedForm.value.description;
-      console.log(this.newEstateOffer);
       this.postNewEstateOffer();
+      this.signedForm.reset();
     }
   }
 

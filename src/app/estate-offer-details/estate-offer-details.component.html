@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="panel-body collapse in" id="detailedEstateOfferBody">
-      <form #f="ngForm" ngNativeValidate>
+      <form (ngSubmit)="onSubmit()" #f="ngForm" ngNativeValidate>
         <div class="row">
           <div class="col-xs-12">
             <label>Miasto:</label>
@@ -20,7 +20,7 @@
           </div>
           <div class="col-sm-6 form-group">
             <label>Numer budynku:</label>
-            <input type="number" placeholder="Nr budynku" value="{{details.estateOffer.property}}" disabled="{{!details.unlocked}}" step="1"
+            <input type="number" placeholder="Nr budynku" [value]="details.estateOffer.property" disabled="{{!details.unlocked}}" step="1"
                    min="1" class="form-control" required ngModel
                    name="property">
             <label>Numer mieszkania:</label>
@@ -48,13 +48,13 @@
             </div>
           </ng-template>
           <div class="col-sm-4" *ngIf="details.unlocked else edit">
-            <button type="submit" class="btn btn-warning" (click)="unlockToggle()">Anuluj</button>
+            <button type="button" class="btn btn-warning" (click)="unlockToggle()">Anuluj</button>
           </div>
           <div class="col-sm-4" *ngIf="details.unlocked">
-            <button type="submit" class="btn btn-success">Zapisz zmiany</button>
+            <button type="submit" class="btn btn-success" [disabled]="!f.dirty || f.invalid">Zapisz zmiany</button>
           </div>
           <div class="col-sm-4" *ngIf="details.unlocked" align="right">
-            <button type="submit" class="btn btn-danger">Usuń ofertę</button>
+            <button type="button" class="btn btn-danger" (click)="postDelete()">Usuń ofertę</button>
           </div>
         </div>
       </form>
