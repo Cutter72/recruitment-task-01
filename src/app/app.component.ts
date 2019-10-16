@@ -13,7 +13,7 @@ export class AppComponent {
   offerToShow: OfferToShow;
 
   showDetails(estateOfferToShow: EstateOffer) {
-    this.offerToShow = new OfferToShow(estateOfferToShow, true);
+    this.offerToShow = new OfferToShow(estateOfferToShow, true, false);
   }
 }
 
@@ -22,8 +22,9 @@ export class OfferToShow {
   loaded: boolean;
   unlocked: boolean;
 
-  constructor(estateOffer: EstateOffer, loaded: boolean) {
+  constructor(estateOffer: EstateOffer, loaded: boolean, unlocked: boolean) {
     this.estateOffer = estateOffer;
     this.loaded = loaded;
+    this.unlocked = unlocked;
   }
 }

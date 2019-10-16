@@ -15,11 +15,10 @@ export class EstateOfferDetailsComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-
   }
 
   ngOnInit() {
-    this.details = new OfferToShow(new EstateOffer(), false);
+    this.details = new OfferToShow(new EstateOffer(), false, false);
     this.details.estateOffer.city = '';
     this.details.estateOffer.street = '';
     this.details.estateOffer.property = '';
@@ -30,4 +29,13 @@ export class EstateOfferDetailsComponent implements OnInit, OnChanges {
   }
 
 
+  unlockToggle() {
+    if (this.details.loaded === true) {
+      if (this.details.unlocked === true) {
+        this.ngOnInit();
+      } else {
+        this.details.unlocked = !this.details.unlocked;
+      }
+    }
+  }
 }
