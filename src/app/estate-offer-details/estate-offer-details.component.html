@@ -39,7 +39,7 @@
                    class="form-control" required ngModel
                    name="price">
             <label>Typ:</label>
-            <select class="form-control" [ngModel]="details.estateOffer.type" name="type" disabled="{{!details.unlocked}}">
+            <select class="form-control" [ngModel]="details.loaded ? details.estateOffer.type : 4" name="type" disabled="{{!details.unlocked}}">
               <option value="1">Dom</option>
               <option value="2">Mieszkanie</option>
               <option value="3">Bióro</option>
