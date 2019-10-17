@@ -5,14 +5,14 @@
     <div class="panel-heading" style="background-color: #ddd">
       <div class="row">
         <div class="col-sm-9">
-          {{estateOffer.city}} {{estateOffer.street}} {{estateOffer.property}}/{{estateOffer.apartment}} - {{estateOffer.type}}
+          <b>{{estateOffer.city}}</b> - ul. {{estateOffer.street}} {{estateOffer.property}}/{{estateOffer.apartment}}
         </div>
         <div class="col-md-3" align="right"><span class="badge" align="right">{{estateOffer.price}} zł</span></div>
       </div>
     </div>
     <div class="panel-body">
       <div class="col-md-10">
-        {{estateOffer.description}}
+        <i>{{estateOffer.description}}</i>
       </div>
       <div class="col-md-2" align="right">
         <img src="{{typeOfOffer()}}" height="64" width="64"/>

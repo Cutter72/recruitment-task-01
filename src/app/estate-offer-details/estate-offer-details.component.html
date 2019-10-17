@@ -48,9 +48,7 @@
           </div>
           <div class="col-xs-12 form-group">
             <label>Opis:</label>
-            <input type="text" placeholder="Opis" value="{{details.estateOffer.description}}"
-                   disabled="{{!details.unlocked}}"
-                   class="form-control" required ngModel name="description">
+            <textarea type="text" placeholder="Opis" rows="4" maxlength="255" class="form-control" disabled="{{!details.unlocked}}" required ngModel name="description" [value]="details.estateOffer.description"></textarea>
           </div>
           <ng-template #edit>
             <div class="col-sm-4" *ngIf="details.loaded">

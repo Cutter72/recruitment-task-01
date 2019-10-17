@@ -4,3 +4,4 @@ input.ng-invalid.ng-touched {
 .cursor-pointer {
   cursor: pointer;
 }
+textarea { resize: vertical; }
