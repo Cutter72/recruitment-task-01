@@ -11,6 +11,17 @@ export class MyEstateOfferListItemComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  typeOfOffer() {
+    if (this.estateOffer.type == 1) {
+      return 'assets/house.png';
+    } else if (this.estateOffer.type == 2) {
+      return 'assets/flat.png';
+    } else if (this.estateOffer.type == 3) {
+      return 'assets/office.png';
+    }
+    return 'assets/room.png';
+  }
 }
 
 export class EstateOffer {

@@ -10,9 +10,13 @@
         <div class="col-md-3" align="right"><span class="badge" align="right">{{estateOffer.price}} zł</span></div>
       </div>
     </div>
-
     <div class="panel-body">
-      {{estateOffer.description}}
+      <div class="col-md-10">
+        {{estateOffer.description}}
+      </div>
+      <div class="col-md-2" align="right">
+        <img src="{{typeOfOffer()}}" height="64" width="64"/>
+      </div>
     </div>
     </a>
   </div>
