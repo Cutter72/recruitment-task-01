@@ -58,10 +58,10 @@
           <div class="col-sm-4" *ngIf="details.unlocked else edit">
             <button type="button" class="btn btn-warning" (click)="unlockToggle()">Anuluj</button>
           </div>
-          <div class="col-sm-4" *ngIf="details.unlocked">
-            <button type="submit" class="btn btn-success" [disabled]="!f.dirty || f.invalid">Zapisz zmiany</button>
+          <div class="col-sm-4">
+            <button *ngIf="details.unlocked" type="submit" class="btn btn-success" [disabled]="!f.dirty || f.invalid">Zapisz zmiany</button>
           </div>
-          <div class="col-sm-4" *ngIf="details.unlocked" align="right">
+          <div class="col-sm-4" *ngIf="details.loaded" align="right">
             <button type="button" class="btn btn-danger" (click)="postDelete()">Usuń ofertę</button>
           </div>
         </div>

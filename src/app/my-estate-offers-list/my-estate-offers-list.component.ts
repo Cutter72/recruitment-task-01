@@ -75,6 +75,16 @@ export class MyEstateOffersListComponent implements OnInit {
     }
     this.sortByStreetAsc = !this.sortByStreetAsc;
   }
+
+  deleteAllOffers() {
+    if (confirm('Na pewno chcesz usunąć WSZYSTKIE oferty?')) {
+      this.http.post(AppComponent.serverAddress + '/deleteAll', {})
+        .subscribe(responseData => {
+          console.log(responseData);
+        });
+      this.estateOffers = null;
+    }
+  }
 }
 
 class ResponseData {
