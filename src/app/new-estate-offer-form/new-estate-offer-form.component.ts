@@ -2,7 +2,6 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {AppComponent} from '../app.component';
-import {MyEstateOffersListComponent} from '../my-estate-offers-list/my-estate-offers-list.component';
 
 @Component({
   selector: 'app-new-estate-offer',
