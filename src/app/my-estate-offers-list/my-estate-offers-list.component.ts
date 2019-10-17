@@ -66,6 +66,15 @@ export class MyEstateOffersListComponent implements OnInit {
     }
     this.sortByStreetAsc = !this.sortByStreetAsc;
   }
+
+  sortByType() {
+    if (this.sortByStreetAsc) {
+      this.estateOffers.sort((a, b) => (a.type > b.type) ? 1 : ((b.type > a.type) ? -1 : 0));
+    } else {
+      this.estateOffers.sort((a, b) => (a.type > b.type) ? -1 : ((b.type > a.type) ? 1 : 0));
+    }
+    this.sortByStreetAsc = !this.sortByStreetAsc;
+  }
 }
 
 class ResponseData {
