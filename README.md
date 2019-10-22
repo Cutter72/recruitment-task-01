@@ -1,4 +1,4 @@
-# Task
+# recruitment-task-01
 
 To prepare this app to run, type `npm install` in the project folder to install all dependencies.
 
